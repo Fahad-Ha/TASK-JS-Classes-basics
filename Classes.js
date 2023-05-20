@@ -96,8 +96,8 @@ class Movie {
 
   averageRating() {
     return this.ratingArray.reduce(
-      (totalRatings, rating) => totalRatings + rating / this.ratingArray.length,
-      0
+      (totalRatings, rating) =>
+        (totalRatings + rating) / this.ratingArray.length
     );
     // let ratingTotal = 0;
     // for (let i = 0; i < this.ratingArray.length; i++) {
