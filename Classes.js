@@ -49,13 +49,14 @@ const person3 = new Person("Abdullah", "Nasser", "Male", 1992);
 person3.printName();
 const age3 = person3.calculateAge(2023);
 
-const ageArray = [age1, age2, age3];
-let agesSum = 0;
-for (let i = 0; i < ageArray.length; i++) {
-  agesSum += ageArray[i];
-}
-
-console.log("sum", agesSum);
+const agesSum = [age1, age2, age3].reduce((sum, age) => sum + age);
+// const ageArray = [age1, age2, age3];
+// let agesSum = 0;
+// for (let i = 0; i < ageArray.length; i++) {
+//   agesSum += ageArray[i];
+// }
+console.log("Sum of all ages: ", agesSum);
+// console.log("sum", agesSum);
 // console.log("test", test);
 /** (Question 2): (15000 Points)
  * 1. Write a class `Movie`, give it the following properties
@@ -128,7 +129,7 @@ class Actor extends Person {
     super(firstName, lastName, gender, birthYear);
     this.movies = [];
   }
-
+  // Remove question ????? should we add this. to every parameter? even if it's not in the constructor?
   addMovie(movie) {
     this.movies.push(movie);
     return this.movies;
@@ -138,3 +139,5 @@ class Actor extends Person {
 const actor1 = new Actor("fahad", "Ahmad", "Male", 1998);
 console.log(actor1.addMovie("Naruto"));
 console.log(actor1);
+
+// ??? two questions here and the first one
